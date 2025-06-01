@@ -9,7 +9,13 @@ connectDB();
 const app = express();
 
 // Middleware
-app.use(cors());
+app.use(
+  cors({
+    origin: "https://taskmanager-omega-one.vercel.app", // your Vercel frontend
+    credentials: true,
+  })
+);
+
 app.use(express.json());
 
 // Routes
