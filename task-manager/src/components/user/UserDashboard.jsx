@@ -21,7 +21,7 @@ const UserDashboard = () => {
       try {
         setLoading(true);
         const response = await axios.get(
-          `http://localhost:5000/api/tasks/user-tasks/${userId}`
+          `https://taskmanager-dl2q.onrender.com/api/tasks/user-tasks/${userId}`
         );
         setTasks(response.data);
       } catch (err) {
@@ -42,7 +42,7 @@ const UserDashboard = () => {
     }
     try {
       await axios.post(
-        `http://localhost:5000/api/tasks/${taskId}/complete`,
+        `https://taskmanager-dl2q.onrender.com/api/tasks/${taskId}/complete`,
         { userId } // Pass userId in the request body
       );
       // Update the task status in the frontend
